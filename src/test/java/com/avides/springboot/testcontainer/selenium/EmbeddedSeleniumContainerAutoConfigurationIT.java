@@ -3,33 +3,33 @@ package com.avides.springboot.testcontainer.selenium;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Configuration;
+
+import com.avides.springboot.testcontainer.selenium.util.ApplicationIpDetector;
 
 public class EmbeddedSeleniumContainerAutoConfigurationIT extends AbstractIT
 {
     private static final String DEFAULT_TEST_URL = "https://www.avides.com/";
 
     @Autowired
-    private SeleniumContainer embeddedSeleniumContainer;
+    private RemoteWebDriver seleniumRemoteWebDriver;
 
     @Test
-    public void testGetApplicationUrl()
+    public void testGetApplicationIP()
     {
-        assertThat(embeddedSeleniumContainer.getApplicationUrl()).isNotNull();
-        assertThat(embeddedSeleniumContainer.getApplicationUrl()).startsWith("http://");
-        assertThat(embeddedSeleniumContainer.getApplicationUrl()).contains(":");
-        assertThat(embeddedSeleniumContainer.getApplicationUrl()).endsWith("/");
+        assertThat(ApplicationIpDetector.detect()).matches("^(([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$");
     }
 
     @Test
     public void testOpenUrl()
     {
-        assertThat(embeddedSeleniumContainer.getRemoteWebDriver().getCurrentUrl()).isNotEqualTo(DEFAULT_TEST_URL);
+        assertThat(seleniumRemoteWebDriver.getCurrentUrl()).isNotEqualTo(DEFAULT_TEST_URL);
 
-        embeddedSeleniumContainer.getRemoteWebDriver().get(DEFAULT_TEST_URL);
-        assertThat(embeddedSeleniumContainer.getRemoteWebDriver().getCurrentUrl()).isEqualTo(DEFAULT_TEST_URL);
+        seleniumRemoteWebDriver.get(DEFAULT_TEST_URL);
+        assertThat(seleniumRemoteWebDriver.getCurrentUrl()).isEqualTo(DEFAULT_TEST_URL);
     }
 
     @Configuration

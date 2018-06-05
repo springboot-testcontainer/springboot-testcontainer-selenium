@@ -10,7 +10,7 @@
 <dependency>
 	<groupId>com.avides.springboot.testcontainer</groupId>
 	<artifactId>springboot-testcontainer-selenium</artifactId>
-	<version>0.0.1-RC1</version>
+	<version>0.0.1-RC2</version>
 	<scope>test</scope>
 </dependency>
 ```
@@ -21,6 +21,35 @@ Properties consumed (in `bootstrap.properties`):
 - `embedded.container.selenium.startup-timeout` (default is `30`)
 - `embedded.container.selenium.browser-name` (default is `chrome`)
 - `embedded.container.selenium.browser-docker-image-version` (default is `3.12.0`)
+
+## Example
+```java
+import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
+
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.avides.springboot.testcontainer.selenium.EmbeddedSeleniumContainerAutoConfiguration;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment = RANDOM_PORT, classes = EmbeddedSeleniumContainerAutoConfiguration.class)
+public class TestClass
+{
+    @LocalServerPort
+    private int port;
+
+    @Test
+    public void testSomething()
+    {
+        String url = "http://" + ApplicationIpDetector.detect() + ":" + Integer.toString(port);
+        embeddedSeleniumContainer.getRemoteWebDriver().get(url);
+
+        // ...
+    }
+}
+```
 
 ## Supported Browsers
 | Browser Name  | Docker-Image |

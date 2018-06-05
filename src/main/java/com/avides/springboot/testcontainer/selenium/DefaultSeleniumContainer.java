@@ -1,7 +1,5 @@
 package com.avides.springboot.testcontainer.selenium;
 
-import static java.lang.String.format;
-
 import java.net.URL;
 
 import org.openqa.selenium.Capabilities;
@@ -22,12 +20,6 @@ public class DefaultSeleniumContainer extends AbstractBuildingEmbeddedContainer<
     public DefaultSeleniumContainer(String service, ConfigurableEnvironment environment, SeleniumProperties properties)
     {
         super(service, environment, properties);
-    }
-
-    @Override
-    public String getApplicationUrl()
-    {
-        return format("http://%s:%s/", getContainerHost(), Integer.toString(getContainerPort(properties.getPort())));
     }
 
     @SneakyThrows

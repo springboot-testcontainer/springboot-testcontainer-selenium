@@ -1,7 +1,9 @@
 package com.avides.springboot.testcontainer.selenium;
 
 import static com.avides.springboot.testcontainer.selenium.SeleniumProperties.BEAN_NAME;
+import static com.avides.springboot.testcontainer.selenium.SeleniumProperties.REMOTE_WEB_DRIVER_BEAN_NAME;
 
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -22,7 +24,7 @@ public class EmbeddedSeleniumContainerAutoConfiguration
 {
     @ConditionalOnMissingBean(DefaultSeleniumContainer.class)
     @Bean(name = BEAN_NAME)
-    public EmbeddedContainer seleniumContainer(ConfigurableEnvironment environment, SeleniumProperties properties)
+    EmbeddedContainer seleniumContainer(ConfigurableEnvironment environment, SeleniumProperties properties)
     {
         if (StringUtils.isEmpty(properties.getDockerImage()))
         {
@@ -30,5 +32,11 @@ public class EmbeddedSeleniumContainerAutoConfiguration
         }
 
         return new DefaultSeleniumContainer("selenium", environment, properties);
+    }
+
+    @Bean(name = REMOTE_WEB_DRIVER_BEAN_NAME)
+    RemoteWebDriver seleniumRemoteWebDriver(SeleniumContainer embeddedSeleniumContainer)
+    {
+        return embeddedSeleniumContainer.getRemoteWebDriver();
     }
 }
