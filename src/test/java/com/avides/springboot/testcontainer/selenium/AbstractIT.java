@@ -11,7 +11,7 @@ import com.github.dockerjava.api.DockerClient;
 import com.github.dockerjava.core.DockerClientBuilder;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = EmbeddedSeleniumContainerAutoConfiguration.class)
+@SpringBootTest
 @DirtiesContext
 public abstract class AbstractIT
 {

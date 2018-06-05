@@ -33,10 +33,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.avides.springboot.testcontainer.selenium.EmbeddedSeleniumContainerAutoConfiguration;
-
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = RANDOM_PORT, classes = EmbeddedSeleniumContainerAutoConfiguration.class)
+@SpringBootTest(webEnvironment = RANDOM_PORT)
 public class TestClass
 {
     @Autowired

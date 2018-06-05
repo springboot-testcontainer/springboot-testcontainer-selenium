@@ -20,7 +20,7 @@ import com.avides.springboot.testcontainer.common.container.EmbeddedContainer;
 @ConditionalOnProperty(name = "embedded.container.selenium.enabled", matchIfMissing = true)
 @AutoConfigureOrder(Ordered.HIGHEST_PRECEDENCE)
 @EnableConfigurationProperties(SeleniumProperties.class)
-public class EmbeddedSeleniumContainerAutoConfiguration
+class EmbeddedSeleniumContainerAutoConfiguration
 {
     @ConditionalOnMissingBean(DefaultSeleniumContainer.class)
     @Bean(name = BEAN_NAME)
