@@ -27,6 +27,8 @@ Properties consumed (in `bootstrap.properties`):
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 import org.junit.runner.RunWith;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -37,6 +39,9 @@ import com.avides.springboot.testcontainer.selenium.EmbeddedSeleniumContainerAut
 @SpringBootTest(webEnvironment = RANDOM_PORT, classes = EmbeddedSeleniumContainerAutoConfiguration.class)
 public class TestClass
 {
+    @Autowired
+    private RemoteWebDriver embeddedSeleniumRemoteWebDriver;
+
     @LocalServerPort
     private int port;
 
@@ -44,7 +49,7 @@ public class TestClass
     public void testSomething()
     {
         String url = "http://" + ApplicationIpDetector.detect() + ":" + Integer.toString(port);
-        embeddedSeleniumContainer.getRemoteWebDriver().get(url);
+        embeddedSeleniumRemoteWebDriver.get(url);
 
         // ...
     }
