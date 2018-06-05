@@ -1,0 +1,29 @@
+{
+  "groups": [],
+  "properties": [
+    {
+      "name": "embedded.container.selenium.enabled",
+      "type": "java.lang.Boolean",
+      "description": "Enables/Disables container startup.",
+      "defaultValue": "true"
+    },
+    {
+      "name": "embedded.container.selenium.startup-timeout",
+      "description": "Max time to wait for a successfully started container",
+      "type": "java.lang.Integer",
+      "defaultValue": "30"
+    },
+    {
+      "name": "embedded.container.selenium.browser-name",
+      "type": "java.lang.String",
+      "description": "Browser name",
+      "defaultValue": "chrome"
+    },
+    {
+      "name": "embedded.container.selenium.browser-docker-image-version",
+      "type": "java.lang.String",
+      "description": "Browser docker image version",
+      "defaultValue": "3.12.0"
+    }
+  ]
+}
