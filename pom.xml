@@ -5,7 +5,7 @@
   <name>springboot-testcontainer-selenium</name>
   <description>Selenium test-container</description>
   <url>https://github.com/springboot-testcontainer/springboot-testcontainer-selenium</url>
-  <version>0.0.1-RELEASE</version>
+  <version>0.0.1-RC1</version>
 
   <properties>
     <!-- System -->
