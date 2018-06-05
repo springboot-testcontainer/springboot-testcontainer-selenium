@@ -5,7 +5,7 @@
   <name>springboot-testcontainer-selenium</name>
   <description>Selenium test-container</description>
   <url>https://github.com/springboot-testcontainer/springboot-testcontainer-selenium</url>
-  <version>0.0.1-RC1</version>
+  <version>0.0.1-RC2</version>
 
   <properties>
     <!-- System -->
@@ -26,7 +26,7 @@
     <maven-failsafe-plugin.version>2.20.1</maven-failsafe-plugin.version>
     <coveralls.version>4.3.0</coveralls.version>
     <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
-    <maven-scm-provider-gitexe.version>1.9.5</maven-scm-provider-gitexe.version>
+    <maven-scm-provider-gitexe.version>1.10.0</maven-scm-provider-gitexe.version>
     <github-release-plugin.version>1.2.0</github-release-plugin.version>
     <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
     <!-- Other -->
@@ -46,13 +46,19 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.16.20</version>
+      <version>1.18.0</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.avides.springboot.testcontainer</groupId>
       <artifactId>springboot-testcontainer-common</artifactId>
       <version>0.1.0-RC3</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.cloud</groupId>
+          <artifactId>spring-cloud-context</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -70,7 +76,7 @@
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
-      <version>3.9.1</version>
+      <version>3.10.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>

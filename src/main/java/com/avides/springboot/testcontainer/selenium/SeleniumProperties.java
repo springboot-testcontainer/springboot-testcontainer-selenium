@@ -20,11 +20,18 @@ import lombok.ToString;
 public class SeleniumProperties extends AbstractEmbeddedContainerProperties
 {
     /**
-     * Spring context bean name.
+     * Spring context bean name for {@link SeleniumContainer}.
      *
      * @since 0.0.1-RELEASE
      */
     public static final String BEAN_NAME = "embeddedSeleniumContainer";
+
+    /**
+     * Spring context bean name for {@link org.openqa.selenium.remote.RemoteWebDriver}.
+     *
+     * @since 0.0.1-RELEASE
+     */
+    public static final String REMOTE_WEB_DRIVER_BEAN_NAME = "embeddedSeleniumRemoteWebDriver";
 
     /**
      * Selenium container port.
