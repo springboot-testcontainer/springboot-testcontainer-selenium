@@ -23,6 +23,6 @@ public class SeleniumBrowserTypeTest
     @Test
     public void testGetDockerImage()
     {
-        assertThat(SeleniumBrowserType.CHROME.getDockerImage()).isEqualTo("selenium/standalone-chrome-debug:3.12.0");
+        assertThat(SeleniumBrowserType.CHROME.getDockerImage()).isEqualTo("selenium/standalone-chrome-debug:3.141.59");
     }
 }

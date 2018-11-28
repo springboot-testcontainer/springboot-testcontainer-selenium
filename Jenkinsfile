@@ -2,6 +2,12 @@ pipeline
 {
     agent any
 
+    environment
+    {
+        deploymentBranch = "master"
+        mavenExecutable = "mvn-jdk8"
+    }
+
     triggers
     {
         cron('H H(0-5) * * *')
@@ -22,7 +28,7 @@ pipeline
         {
             steps
             {
-                sh 'mvn clean compile test-compile'
+                sh '${mavenExecutable} clean compile test-compile'
             }
         }
 
@@ -30,33 +36,47 @@ pipeline
         {
             steps
             {
-                sh 'mvn surefire:test'
+                sh '${mavenExecutable} surefire:test'
             }
         }
 
         stage('Integration-Tests')
         {
+            when { branch "${env.deploymentBranch}" }
+
             steps
             {
-                sh 'mvn failsafe:integration-test failsafe:verify'
+                sh '${mavenExecutable} failsafe:integration-test failsafe:verify'
             }
         }
 
         stage('Release')
         {
-            when { branch "master" }
+            when { branch "${env.deploymentBranch}" }
 
             steps
             {
-                sh 'mvn clean deploy -Dmaven.test.skip=true'
+                 sh '${mavenExecutable} clean deploy -Dmaven.test.skip=true'
             }
         }
 
         stage('SonarQube')
         {
+            when { branch "${env.deploymentBranch}" }
+
             steps
             {
-                sh 'mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube.avidesmedia/'
+                sh '${mavenExecutable} clean verify sonar:sonar -Dsonar.host.url=http://sonarqube.avidesmedia/'
+            }
+        }
+
+        stage('POM-Analysis')
+        {
+            when { branch "${env.deploymentBranch}" }
+
+            steps
+            {
+                 sh '${mavenExecutable} enforcer:enforce'
             }
         }
     }

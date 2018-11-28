@@ -10,7 +10,7 @@
 <dependency>
 	<groupId>com.avides.springboot.testcontainer</groupId>
 	<artifactId>springboot-testcontainer-selenium</artifactId>
-	<version>0.0.1-RC2</version>
+	<version>0.1.0-RC1</version>
 	<scope>test</scope>
 </dependency>
 ```
@@ -20,7 +20,7 @@ Properties consumed (in `bootstrap.properties`):
 - `embedded.container.selenium.enabled` (default is `true`)
 - `embedded.container.selenium.startup-timeout` (default is `30`)
 - `embedded.container.selenium.browser-name` (default is `chrome`)
-- `embedded.container.selenium.browser-docker-image-version` (default is `3.12.0`)
+- `embedded.container.selenium.browser-docker-image-version` (default is `3.141.59`)
 
 ## Example
 ```java
