@@ -13,20 +13,16 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * {@link ApplicationIpDetector} is used to determine the IP of the application under test.
- *
- * @since 0.0.1-RELEASE
  */
 @UtilityClass
 @Slf4j
 public class ApplicationIpDetector
 {
-    private final Pattern PATTERN = Pattern.compile("^(([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$");
+    private static final Pattern PATTERN = Pattern.compile("^(([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$");
 
     /**
      * Determines the IP of the application under test. First try this by looking up the {@link InetAddress} for {@link NetworkInterface} with IPv4 pattern. If
      * there is no network interface with that pattern try to detect the Docker host IP. If that fails throw an exception.
-     *
-     * @since 0.0.1-RELEASE
      */
     public String detect()
     {

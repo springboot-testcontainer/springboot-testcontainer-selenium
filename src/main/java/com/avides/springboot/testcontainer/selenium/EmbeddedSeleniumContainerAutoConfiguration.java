@@ -16,12 +16,22 @@ import org.springframework.util.StringUtils;
 
 import com.avides.springboot.testcontainer.common.container.EmbeddedContainer;
 
+/**
+ * Configuration class for {@link SeleniumContainer} beans.
+ */
 @Configuration
 @ConditionalOnProperty(name = "embedded.container.selenium.enabled", matchIfMissing = true)
 @AutoConfigureOrder(Ordered.HIGHEST_PRECEDENCE)
 @EnableConfigurationProperties(SeleniumProperties.class)
 class EmbeddedSeleniumContainerAutoConfiguration
 {
+    /**
+     * Build the {@link SeleniumContainer} bean.
+     * 
+     * @param environment {@link ConfigurableEnvironment}
+     * @param properties {@link SeleniumProperties}
+     * @return SeleniumContainer as EmbeddedContainer bean
+     */
     @ConditionalOnMissingBean(DefaultSeleniumContainer.class)
     @Bean(name = BEAN_NAME)
     EmbeddedContainer seleniumContainer(ConfigurableEnvironment environment, SeleniumProperties properties)
@@ -34,6 +44,12 @@ class EmbeddedSeleniumContainerAutoConfiguration
         return new DefaultSeleniumContainer("selenium", environment, properties);
     }
 
+    /**
+     * Build the {@link RemoteWebDriver} as bean.
+     * 
+     * @param embeddedSeleniumContainer {@link SeleniumContainer} bean
+     * @return RemoteWebDriver bean
+     */
     @Bean(name = REMOTE_WEB_DRIVER_BEAN_NAME)
     RemoteWebDriver seleniumRemoteWebDriver(SeleniumContainer embeddedSeleniumContainer)
     {

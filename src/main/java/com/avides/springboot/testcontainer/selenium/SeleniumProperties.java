@@ -10,8 +10,6 @@ import lombok.ToString;
 
 /**
  * SeleniumProperties is used to connect the `application.properties` with Spring Boot.
- *
- * @since 0.0.1-RELEASE
  */
 @ConfigurationProperties("embedded.container.selenium")
 @Getter
@@ -21,36 +19,26 @@ public class SeleniumProperties extends AbstractEmbeddedContainerProperties
 {
     /**
      * Spring context bean name for {@link SeleniumContainer}.
-     *
-     * @since 0.0.1-RELEASE
      */
     public static final String BEAN_NAME = "embeddedSeleniumContainer";
 
     /**
      * Spring context bean name for {@link org.openqa.selenium.remote.RemoteWebDriver}.
-     *
-     * @since 0.0.1-RELEASE
      */
     public static final String REMOTE_WEB_DRIVER_BEAN_NAME = "embeddedSeleniumRemoteWebDriver";
 
     /**
      * Selenium container port.
-     *
-     * @since 0.0.1-RELEASE
      */
     private int port = 4444;
 
     /**
      * Default browser.
-     *
-     * @since 0.0.1-RELEASE
      */
     private String browserName = "chrome";
 
     /**
      * Default browser docker image version.
-     *
-     * @since 0.0.1-RELEASE
      */
-    private String browserDockerImageVersion = "3.12.0";
+    private String browserDockerImageVersion = "3.141.59";
 }
