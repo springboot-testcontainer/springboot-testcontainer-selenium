@@ -26,8 +26,10 @@
     <maven-failsafe-plugin.version>2.22.1</maven-failsafe-plugin.version>
     <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
     <maven-scm-provider-gitexe.version>1.11.1</maven-scm-provider-gitexe.version>
-    <github-release-plugin.version>1.3.0</github-release-plugin.version>
+    <exists-maven-plugin.version>0.0.6</exists-maven-plugin.version>
+    <github-release-plugin.version>1.2.0</github-release-plugin.version>
     <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
+    <skip-deploy-to-central />
     <!-- Other -->
     <spring.version>5.1.3.RELEASE</spring.version>
     <spring-boot.version>2.1.0.RELEASE</spring-boot.version>
@@ -324,6 +326,22 @@
         </dependencies>
       </plugin>
       <plugin>
+        <groupId>org.honton.chas</groupId>
+        <artifactId>exists-maven-plugin</artifactId>
+        <version>${exists-maven-plugin.version}</version>
+        <configuration>
+          <property>skip-deploy-to-central</property>
+          <repository>http://central.maven.org/maven2/</repository>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>remote</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
         <groupId>de.jutzig</groupId>
         <artifactId>github-release-plugin</artifactId>
         <version>${github-release-plugin.version}</version>
@@ -351,6 +369,7 @@
           <serverId>ossrh</serverId>
           <nexusUrl>https://oss.sonatype.org/</nexusUrl>
           <autoReleaseAfterClose>true</autoReleaseAfterClose>
+          <skipRemoteStaging>${skip-deploy-to-central}</skipRemoteStaging>
         </configuration>
       </plugin>
     </plugins>
