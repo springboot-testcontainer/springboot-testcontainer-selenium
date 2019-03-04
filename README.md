@@ -10,7 +10,7 @@
 <dependency>
 	<groupId>com.avides.springboot.testcontainer</groupId>
 	<artifactId>springboot-testcontainer-selenium</artifactId>
-	<version>0.1.0-RC2</version>
+	<version>0.1.0-RC3</version>
 	<scope>test</scope>
 </dependency>
 ```
