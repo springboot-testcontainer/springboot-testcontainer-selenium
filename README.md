@@ -1,16 +1,16 @@
 # springboot-testcontainer-selenium
 
 [![Maven Central](https://img.shields.io/maven-metadata/v/http/central.maven.org/maven2/com/avides/springboot/testcontainer/springboot-testcontainer-selenium/maven-metadata.xml.svg)](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.avides.springboot.testcontainer%22%20AND%20a%3A%22springboot-testcontainer-selenium%22)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4d64ab37576249f694bbb42e7d2cab56)](https://www.codacy.com/app/avides-builds/springboot-testcontainer-selenium?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=springboot-testcontainer/springboot-testcontainer-selenium&amp;utm_campaign=Badge_Grade)
-[![Coverage Status](https://coveralls.io/repos/springboot-testcontainer/springboot-testcontainer-selenium/badge.svg)](https://coveralls.io/r/springboot-testcontainer/springboot-testcontainer-selenium)
-[![Build Status](https://travis-ci.org/springboot-testcontainer/springboot-testcontainer-selenium.svg?branch=master)](https://travis-ci.org/springboot-testcontainer/springboot-testcontainer-selenium)
+[![Build](https://github.com/springboot-testcontainer/springboot-testcontainer-selenium/workflows/release/badge.svg)](https://github.com/springboot-testcontainer/springboot-testcontainer-selenium/actions)
+[![Nightly build](https://github.com/springboot-testcontainer/springboot-testcontainer-selenium/workflows/nightly/badge.svg)](https://github.com/springboot-testcontainer/springboot-testcontainer-selenium/actions)
+[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=springboot-testcontainer_springboot-testcontainer-selenium&metric=alert_status)](https://sonarcloud.io/dashboard?id=springboot-testcontainer_springboot-testcontainer-selenium)
 
 ### Dependency
 ```xml
 <dependency>
 	<groupId>com.avides.springboot.testcontainer</groupId>
 	<artifactId>springboot-testcontainer-selenium</artifactId>
-	<version>0.1.0-RC3</version>
+	<version>1.0.0-RC1</version>
 	<scope>test</scope>
 </dependency>
 ```
