@@ -1,4 +1,4 @@
-package com.avides.springboot.testcontainer.selenium;
+package com.avides.springboot.sprintainer.selenium;
 
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

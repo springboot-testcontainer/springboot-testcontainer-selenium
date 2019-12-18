@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.avides.springboot.testcontainer.selenium.EmbeddedSeleniumContainerAutoConfiguration
+com.avides.springboot.sprintainer.selenium.EmbeddedSeleniumContainerAutoConfiguration

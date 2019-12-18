@@ -1,4 +1,4 @@
-package com.avides.springboot.testcontainer.selenium;
+package com.avides.springboot.sprintainer.selenium;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -17,7 +17,7 @@ public class SeleniumBrowserTypeTest
     public void testGetByPropertyWithUnsupported()
     {
         assertThatThrownBy(() -> SeleniumBrowserType.getByProperty("firefox")).isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("No enum constant com.avides.springboot.testcontainer.selenium.SeleniumBrowserType.FIREFOX");
+                .hasMessage("No enum constant com.avides.springboot.sprintainer.selenium.SeleniumBrowserType.FIREFOX");
     }
 
     @Test
