@@ -1,4 +1,4 @@
-package com.avides.springboot.testcontainer.selenium;
+package com.avides.springboot.sprintainer.selenium;
 
 import java.net.URL;
 
@@ -7,7 +7,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.springframework.core.env.ConfigurableEnvironment;
 
-import com.avides.springboot.testcontainer.common.container.AbstractBuildingEmbeddedContainer;
+import com.avides.springboot.springtainer.common.container.AbstractBuildingEmbeddedContainer;
 
 import lombok.Getter;
 import lombok.SneakyThrows;

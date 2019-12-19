@@ -1,7 +1,7 @@
-package com.avides.springboot.testcontainer.selenium;
+package com.avides.springboot.sprintainer.selenium;
 
-import static com.avides.springboot.testcontainer.selenium.SeleniumProperties.BEAN_NAME;
-import static com.avides.springboot.testcontainer.selenium.SeleniumProperties.REMOTE_WEB_DRIVER_BEAN_NAME;
+import static com.avides.springboot.sprintainer.selenium.SeleniumProperties.BEAN_NAME;
+import static com.avides.springboot.sprintainer.selenium.SeleniumProperties.REMOTE_WEB_DRIVER_BEAN_NAME;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.springframework.boot.autoconfigure.AutoConfigureOrder;
@@ -14,7 +14,7 @@ import org.springframework.core.Ordered;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.util.StringUtils;
 
-import com.avides.springboot.testcontainer.common.container.EmbeddedContainer;
+import com.avides.springboot.springtainer.common.container.EmbeddedContainer;
 
 /**
  * Configuration class for {@link SeleniumContainer} beans.

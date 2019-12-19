@@ -1,4 +1,4 @@
-package com.avides.springboot.testcontainer.selenium;
+package com.avides.springboot.sprintainer.selenium;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Configuration;
 
-import com.avides.springboot.testcontainer.selenium.util.ApplicationIpDetector;
+import com.avides.springboot.sprintainer.selenium.util.ApplicationIpDetector;
 
 public class EmbeddedSeleniumContainerAutoConfigurationIT extends AbstractIT
 {

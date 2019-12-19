@@ -1,4 +1,4 @@
-package com.avides.springboot.testcontainer.selenium;
+package com.avides.springboot.sprintainer.selenium;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
 

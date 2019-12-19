@@ -1,4 +1,4 @@
-package com.avides.springboot.testcontainer.selenium.util;
+package com.avides.springboot.sprintainer.selenium.util;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;
