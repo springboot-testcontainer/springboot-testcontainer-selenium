@@ -3,7 +3,7 @@
 
   <groupId>com.avides.springboot.springtainer</groupId>
   <artifactId>springtainer-selenium</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 
   <name>springtainer-selenium</name>
   <description>Selenium test-container</description>
