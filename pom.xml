@@ -3,7 +3,7 @@
 
   <groupId>com.avides.springboot.springtainer</groupId>
   <artifactId>springtainer-selenium</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 
   <name>springtainer-selenium</name>
   <description>Selenium test-container</description>
@@ -350,7 +350,7 @@
         <version>${exists-maven-plugin.version}</version>
         <configuration>
           <property>skip-deploy-to-central</property>
-          <repository>http://central.maven.org/maven2/</repository>
+          <repository>https://oss.sonatype.org/content/repositories/releases/</repository>
         </configuration>
         <executions>
           <execution>
