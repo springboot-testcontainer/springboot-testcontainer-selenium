@@ -157,7 +157,6 @@
         <configuration>
           <source>${java.version}</source>
           <target>${java.version}</target>
-          <outputEncoding>UTF-8</outputEncoding>
         </configuration>
       </plugin>
       <plugin>
